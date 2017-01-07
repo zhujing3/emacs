@@ -51,6 +51,8 @@
 ;;新曾F1/F3绑定
 (global-set-key [f1] (quote org-export-dispatch))
 (global-set-key [f3] (quote org-publish-project))
+(global-set-key [f4] (quote org-md-export-to-markdown))
+
 
 ;;括号对应
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
@@ -81,6 +83,7 @@
  :sitemap-title "小土鳖的杂货铺"         ; ... with title 'Sitemap'.
  :sitemap-sort-files anti-chronologically
  :sitemap-file-entry-format "%d %t"
+ :timestamp nil
 )
 
 ("blog-static"
@@ -95,6 +98,10 @@
 )
        )
 )
+
+;;(setq org-html-validation-link nil) ; 去掉validation显示
+(setq org-html-link-home "index.html"); 设置home超链接
+(setq org-html-link-up "index.html")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
