@@ -84,6 +84,7 @@
  :sitemap-sort-files anti-chronologically
  :sitemap-file-entry-format "%d %t"
  :timestamp nil
+
 )
 
 ("blog-static"
@@ -100,8 +101,11 @@
 )
 
 ;;(setq org-html-validation-link nil) ; 去掉validation显示
-(setq org-html-link-home "index.html"); 设置home超链接
-(setq org-html-link-up "index.html")
+(setq org-html-link-home "../index.html"); 设置home超链接
+(setq org-html-link-up "../index.html")
+
+(setq org-latex-pdf-process '("c:/texlive/2016/bin/win32/xelatex -interaction nonstopmode %f" 
+                                                    "c:/texlive/2016/bin/win32/xelatex -interaction nonstopmode %f"))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
