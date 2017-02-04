@@ -1,4 +1,3 @@
-
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
@@ -10,6 +9,7 @@
 (package-initialize)
 
 (require 'htmlize)
+
 
 ;; 关闭工具栏，tool-bar-mode 即为一个 Minor Mode
 (tool-bar-mode -1)
@@ -52,7 +52,8 @@
 (global-set-key [f1] (quote org-export-dispatch))
 (global-set-key [f3] (quote org-publish-project))
 (global-set-key [f4] (quote org-md-export-to-markdown))
-
+;; 自动换行
+(global-set-key [f5] 'toggle-truncate-lines)
 
 ;;括号对应
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
@@ -103,9 +104,18 @@
 ;;(setq org-html-validation-link nil) ; 去掉validation显示
 (setq org-html-link-home "../index.html"); 设置home超链接
 (setq org-html-link-up "../index.html")
+;;pdf
+(require 'ox-latex)
+(add-to-list 'org-latex-packages-alist '("" "minted"))
+(setq org-latex-listings 'minted)
 
-(setq org-latex-pdf-process '("c:/texlive/2016/bin/win32/xelatex -interaction nonstopmode %f" 
-                                                    "c:/texlive/2016/bin/win32/xelatex -interaction nonstopmode %f"))
+(setq org-latex-pdf-process
+      '("c:/texlive/2016/bin/win32/xelatex  -shell-escape -interaction nonstopmode -output-directory %o %f"
+        "c:/texlive/2016/bin/win32/xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+        "c:/texlive/2016/bin/win32/xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+
+
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
