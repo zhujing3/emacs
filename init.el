@@ -31,7 +31,7 @@
 (setq ring-bell-function 'ignore)
 
 ;; 关闭启动帮助画面
-(setq inhibit-splash-screen 1)
+;;(setq inhibit-splash-screen 1)
 
 
 ;; 更改显示字体大小 16pt
