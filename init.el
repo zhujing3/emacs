@@ -8,7 +8,7 @@
              '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 (package-initialize)
 
-(require 'htmlize)
+;;(require 'htmlize)
 
 
 ;; 关闭工具栏，tool-bar-mode 即为一个 Minor Mode
@@ -33,12 +33,12 @@
 ;; 关闭启动帮助画面
 ;;(setq inhibit-splash-screen 1)
 
-
+;; 不知道为什么加了这个，在打开有中文字符的文件就卡得不行
 ;; 更改显示字体大小 16pt
 ;; http://stackoverflow.com/questions/294664/how-to-set-the-font-size-in-emacs
-(set-face-attribute 'default nil :height 160)
+;;(set-face-attribute 'default nil :height 160)
 ;; UTF-8 as default encoding
-(set-language-environment "UTF-8")
+;;(set-language-environment "UTF-8")
 
 
 ;; 快速打开配置文件
