@@ -39,7 +39,8 @@
 ;;(set-face-attribute 'default nil :height 160)
 ;; UTF-8 as default encoding
 ;;(set-language-environment "UTF-8")
-
+;; 设置默认编码格式，这样中文就不卡啦，当然你害得先设置下字体
+(set-default-coding-systems 'utf-8-auto-unix)
 
 ;; 快速打开配置文件
 (defun open-init-file()
